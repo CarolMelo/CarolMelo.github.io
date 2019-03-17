@@ -94,10 +94,8 @@
               <option value="deficiencia">Deficiência</option>
               <option value="objetivo">Objetivo</option>
               <option value="solucao">Solução</option>
-              <option value="plataforma">Plataforma</option>
               <option value="faixa">Faixa Etária</option>
               <option value="licenca">Licença</option>
-              <option value="ano">Ano</option>
             </select>
 
             <button class="btn btn-primary btn-bold fs-14 rounded" onclick="buscar()">Buscar</button>
@@ -145,6 +143,12 @@
   
   function pegarTodos(busca){
    limpar();
+   pegarPorAtributo(nome,busca);
+   pegarPorAtributo(objetivo,busca);
+   pegarPorAtributo(deficiencia,busca);
+   pegarPorAtributo(faixa,busca);
+   pegarPorAtributo(solucao,busca);
+   pegarPorAtributo(licenca,busca);
   }
 
   function pegarPorAtributo(atributo,busca){
@@ -224,6 +228,7 @@
   }
 
   function addErro(){
+    limpar();
     $("#contemResultados").append(
       "<h3> Nenhuma Tecnologia Assistiva Encontrada.</h3>");
   }

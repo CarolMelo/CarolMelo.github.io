@@ -23,5 +23,27 @@
 		<licenca>pago</licenca>
 		<ano>1995</ano>
 	</ta>
+	<ta>
+		<id>3</id>
+		<nome>pouco</nome>
+		<deficiencia>auditiva</deficiencia>		
+		<objetivo>Auxiliar a comer</objetivo>
+		<solucao>hardware</solucao>
+		<plataforma>livre</plataforma>
+		<faixa>sem nenhuma</faixa>
+		<licenca>grates</licenca>
+		<ano>2017</ano>
+	</ta>
+	<ta>
+		<id>4</id>
+		<nome>Ana Carolina</nome>
+		<deficiencia>mudo</deficiencia>		
+		<objetivo>Auxiliar a se comunicar com as outras pessoas ao seu redor</objetivo>
+		<solucao>software</solucao>
+		<plataforma>livre</plataforma>
+		<faixa>sem limites</faixa>
+		<licenca>pago</licenca>
+		<ano>2019</ano>
+	</ta>
 </TAList>
 
