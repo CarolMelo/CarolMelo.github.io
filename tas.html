@@ -234,7 +234,7 @@
     limpar();
     var selecionado = document.getElementById("tipo").value;
     var busca = document.getElementById('busca').value;
-    if (selecionado.contains('todos')) {
+    if (selecionado.includes('todos')) {
       pegarTodos(busca);
     }
     else{
