@@ -83,7 +83,7 @@
       <div class="card"> 
 
         <div class="card-body card-round">
-          
+
 
           <div class="lookup lookup-huge no-icon" >
             <input class="rounded" type="text" placeholder="Digite e depois aperte Enter." id="busca" name="busca">
@@ -122,13 +122,11 @@
             <div class="card card-shadowed text-center p-60">
               <h4 class="text-success fw-400">Contátil</h4>
               <br>
-
               <p class="fs-15">Auxiliar no ensino da Matemática</p>
               <p>Visual</p>
               <p>Sem restrições</p>
               <p>Software</p>
               <p>Gratuito</p>
-
               <br>
               <br>
               <a class="btn btn-bold btn-block btn-round btn-success" href="#">Abrir</a>
@@ -207,21 +205,20 @@
         $(xml).find('ta').each(function(){
           var atrb = $(this).find(atributo).text();
           if(atrb.includes(busca)){
-
-            alert("Achou");
+            var id = $(this).find('id').text();
+            var nome = $(this).find('nome').text();
+            var deficiencia = $(this).find('deficiencia').text();
+            var objetivo = $(this).find('objetivo').text();
+            var solucao = $(this).find('solucao').text();
+            var plataforma = $(this).find('plataforma').text();
+            var faixa = $(this).find('faixa').text();
+            var licenca = $(this).find('licenca').text();
+            var ano = $(this).find('ano').text();
+            adicionarTa(id,nome,objetivo,deficiencia,faixa,solucao,licenca);
           }
-
-          var id = $(this).find('id').text();
-          var nome = $(this).find('nome').text();
-          var deficiencia = $(this).find('deficiencia').text();
-          var objetivo = $(this).find('objetivo').text();
-          var solucao = $(this).find('solucao').text();
-          var plataforma = $(this).find('plataforma').text();
-          var faixa = $(this).find('faixa').text();
-          var licenca = $(this).find('licenca').text();
-          var ano = $(this).find('ano').text();
-
-
+          else{
+            addErro();
+          }
 
         });
       },
@@ -232,40 +229,57 @@
     
   }
 
-  $(document).ready(function(){
-  // $("#dvContent").append("<ul></ul>");
-  $.ajax({
-    type: "GET",
-    url: "bd.xml",
-    dataType: "xml",
-    success: function(xml){
-      $(xml).find('ta').each(function(){
-        var id = $(this).find('id').text();
-        var nome = $(this).find('nome').text();
-        var deficiencia = $(this).find('deficiencia').text();
-        var objetivo = $(this).find('objetivo').text();
-        var solucao = $(this).find('solucao').text();
-        var plataforma = $(this).find('plataforma').text();
-        var faixa = $(this).find('faixa').text();
-        var licenca = $(this).find('licenca').text();
-        var ano = $(this).find('ano').text();
+  
+
+  function adicionarTodos(){
+    $(document).ready(function(){
+      $.ajax({
+        type: "GET",
+        url: "bd.xml",
+        dataType: "xml",
+        success: function(xml){
+          $(xml).find('ta').each(function(){
+            var id = $(this).find('id').text();
+            var nome = $(this).find('nome').text();
+            var deficiencia = $(this).find('deficiencia').text();
+            var objetivo = $(this).find('objetivo').text();
+            var solucao = $(this).find('solucao').text();
+            var plataforma = $(this).find('plataforma').text();
+            var faixa = $(this).find('faixa').text();
+            var licenca = $(this).find('licenca').text();
+            var ano = $(this).find('ano').text();
 
 
-      
+
+          });
+        },
+        error: function() {
+          alert("An error occurred while processing XML file.");
+        }
       });
-    },
-    error: function() {
-      alert("An error occurred while processing XML file.");
-    }
-  });
-});
+    });
+  }
 
 
-function buscar(){
-  var selecionado = document.getElementById("tipo").value;
-  console.log(selecionado);
 
-}
+
+
+  function adicionarTa(id,nome,objetivo,deficiencia,faixa,solucao,licenca){
+    var divr = '<div class="col-md-5 col-lg-4"> <div class="card card-shadowed text-center p-60"> <h4 class="text-success fw-400">'+nome+'</h4> <br> <p class="fs-15">'+objetivo+'</p><p>'+deficiencia+'</p><p>'+faixa+'</p><p>'+solucacao+'</p><p>'+licenca+'</p><br><br><a class="btn btn-bold btn-block btn-round btn-success" href="'+id+'">Abrir</a></div></div>';
+    $("#contemResultados").append(divr);
+  }
+
+  function addErro(){
+    $("#contemResultados").append("<h3> Nenhuma Tecnologia Assistiva Encontrada.</h3>");
+  }
+
+  function buscar(){
+    $("#contemResultados").empty();
+    var selecionado = document.getElementById("tipo").value;
+    pegarPorAtributo(selecionado);
+
+
+  }
 
   </script>
 
