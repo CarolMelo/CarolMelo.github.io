@@ -282,9 +282,15 @@
     }
 
     addTas();
-    if(document.getElementById("contemResultados").childElementCount == 0){
+
+    function erroL(){
+      if(document.getElementById("contemResultados").childElementCount == 0){
       addErro();
     }
+    }
+    setTimeout(erroL, 3000);
+
+    
   }
 
   $(document).ready(adicionarTodos());
