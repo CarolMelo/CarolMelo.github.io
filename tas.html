@@ -103,8 +103,6 @@
             <button class="btn btn-primary btn-bold fs-14 rounded" onclick="buscar()">Buscar</button>
           </div>  
 
-
-
         </div>
       </div>
 
@@ -112,32 +110,11 @@
 
       <div class="card"> 
 
-
-
-
         <div class="card-body card-round row" id="contemResultados">
-
-
-          <div class="col-md-5 col-lg-4">
-            <div class="card card-shadowed text-center p-60">
-              <h4 class="text-success fw-400">Contátil</h4>
-              <br>
-              <p class="fs-15">Auxiliar no ensino da Matemática</p>
-              <p>Visual</p>
-              <p>Sem restrições</p>
-              <p>Software</p>
-              <p>Gratuito</p>
-              <br>
-              <br>
-              <a class="btn btn-bold btn-block btn-round btn-success" href="#">Abrir</a>
-            </div>
-          </div>
 
         </div>
         
-
       </div>
-
       <br><br><br>
 
 
@@ -165,38 +142,12 @@
 
 
   <script type="text/javascript" charset="utf-8" async defer>
-
-
-  function pegarTodos(){
-    $.ajax({
-      type: "GET",
-      url: "bd.xml",
-      dataType: "xml",
-      success: function(xml){
-        $(xml).find('ta').each(function(){
-          var id = $(this).find('id').text();
-          var nome = $(this).find('nome').text();
-          var deficiencia = $(this).find('deficiencia').text();
-          var objetivo = $(this).find('objetivo').text();
-          var solucao = $(this).find('solucao').text();
-          var plataforma = $(this).find('plataforma').text();
-          var faixa = $(this).find('faixa').text();
-          var licenca = $(this).find('licenca').text();
-          var ano = $(this).find('ano').text();
-
-
-        });
-      },
-      error: function() {
-        alert("An error occurred while processing XML file.");
-      }
-    });
-
+  
+  function pegarTodos(busca){
+   limpar();
   }
 
-  function pegarPorAtributo(atributo){
-
-    var busca = document.getElementById('busca').value;
+  function pegarPorAtributo(atributo,busca){
     $.ajax({
       type: "GET",
       url: "bd.xml",
@@ -223,46 +174,39 @@
         });
       },
       error: function() {
-        alert("");
+        alert("Não Foi Possível Conectar Com o Banco de Dados");
+      }
+    });
+  }
+
+  function adicionarTodos(){
+
+    $.ajax({
+      type: "GET",
+      url: "bd.xml",
+      dataType: "xml",
+      success: function(xml){
+        $(xml).find('ta').each(function(){
+          var id = $(this).find('id').text();
+          var nome = $(this).find('nome').text();
+          var deficiencia = $(this).find('deficiencia').text();
+          var objetivo = $(this).find('objetivo').text();
+          var solucao = $(this).find('solucao').text();
+          var plataforma = $(this).find('plataforma').text();
+          var faixa = $(this).find('faixa').text();
+          var licenca = $(this).find('licenca').text();
+          var ano = $(this).find('ano').text();
+
+          adicionarTa(id,nome,objetivo,deficiencia,faixa,solucao,licenca);
+
+        });
+      },
+      error: function() {
+        alert("Não Foi Possível Conectar Com o Banco de Dados");
       }
     });
     
   }
-
-  
-
-  function adicionarTodos(){
-    $(document).ready(function(){
-      $.ajax({
-        type: "GET",
-        url: "bd.xml",
-        dataType: "xml",
-        success: function(xml){
-          $(xml).find('ta').each(function(){
-            var id = $(this).find('id').text();
-            var nome = $(this).find('nome').text();
-            var deficiencia = $(this).find('deficiencia').text();
-            var objetivo = $(this).find('objetivo').text();
-            var solucao = $(this).find('solucao').text();
-            var plataforma = $(this).find('plataforma').text();
-            var faixa = $(this).find('faixa').text();
-            var licenca = $(this).find('licenca').text();
-            var ano = $(this).find('ano').text();
-
-
-
-          });
-        },
-        error: function() {
-          alert("An error occurred while processing XML file.");
-        }
-      });
-    });
-  }
-
-
-
-
 
   function adicionarTa(id,nome,objetivo,deficiencia,faixa,solucao,licenca){
     var s1 = '<div class="col-md-5 col-lg-4"> <div class="card card-shadowed text-center p-60"> <h4 class="text-success fw-400">'+nome;
@@ -280,16 +224,27 @@
   }
 
   function addErro(){
-    $("#contemResultados").append("<h3> Nenhuma Tecnologia Assistiva Encontrada.</h3>");
+    $("#contemResultados").append(
+      "<h3> Nenhuma Tecnologia Assistiva Encontrada.</h3>");
   }
+
+  function limpar(){$("#contemResultados").empty();}
 
   function buscar(){
-    $("#contemResultados").empty();
+    limpar();
     var selecionado = document.getElementById("tipo").value;
-    pegarPorAtributo(selecionado);
-
-
+    var busca = document.getElementById('busca').value;
+    if (selecionado.contains('todos')) {
+      pegarTodos(busca);
+    }
+    else{
+    limpar();  
+    pegarPorAtributo(selecionado,busca);
+    }
   }
+
+  $(document).ready(adicionarTodos());
+
 
   </script>
 
