@@ -241,15 +241,15 @@
 
   function adicionarTa(id,nome,objetivo,deficiencia,faixa,solucao,licenca){
     var s1 = '<div class="col-md-5 col-lg-4"> <div class="card card-shadowed text-center p-60"> <h4 class="text-success fw-400">'+nome;
-    var s2 = '</h4> <br> <p class="fs-15">'+objetivo;
-    var s3 = '</p><p>'+deficiencia;
-    var s4 = '</p><p>'+faixa;
-    var s5 = '</p><p>'+solucao;
-    var s6 = '</p><p>'+licenca; 
+    // var s2 = '</h4> <br> <p class="fs-15">'+objetivo;
+    var s3 = '</p><p> Deficiência '+deficiencia;
+    // var s4 = '</p><p>'+faixa;
+    // var s5 = '</p><p>'+solucao;
+    // var s6 = '</p><p>'+licenca; 
     var s7 = '</p><br><br><a class="btn btn-bold btn-block btn-round btn-success" href="taDetalhe.html?id='+id;
     var s8 = '">Abrir</a></div></div>';
 
-    var ta = s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8;
+    var ta = s1 + s3 + s7 + s8;
 
     $("#contemResultados").append(ta);
   }
