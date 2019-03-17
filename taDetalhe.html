@@ -84,97 +84,97 @@
 
         <div class="card-body card-round row" id="contemResultados">
 
+         
 
-        
-
-        </div>
       </div>
+    </div>
 
-      <br><br>
-
-      
-
-    </div><!--/.main-content -->
+    <br><br>
 
 
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="row">
-        <div class="col-md-6">
-          <p class="text-center text-md-left">Copyright © 2019 <a href="#">Ana Assistive Tech</a>. All rights reserved.</p>
-        </div>
+
+  </div><!--/.main-content -->
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="text-center text-md-left">Copyright © 2019 <a href="#">Ana Assistive Tech</a>. All rights reserved.</p>
       </div>
-    </footer>
-    <!-- END Footer -->
+    </div>
+  </footer>
+  <!-- END Footer -->
 
-  </main>
-  <!-- END Main container -->
-
-
-  <!-- Scripts -->
-  <script src="assets/js/core.min.js"></script>
-  <script src="assets/js/app.min.js"></script>
-  <script src="assets/js/script.min.js"></script>
+</main>
+<!-- END Main container -->
 
 
-  <script type="text/javascript" charset="utf-8" async defer>
-    
+<!-- Scripts -->
+<script src="assets/js/core.min.js"></script>
+<script src="assets/js/app.min.js"></script>
+<script src="assets/js/script.min.js"></script>
 
 
-  function pegarTA(){
-    
-    $.urlParam = function(name){
-      var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-      return results[1] || 0;
-    }
+<script type="text/javascript" charset="utf-8" async defer>
 
-    var id = $.urlParam('id');
 
-    $.ajax({
-      type: "GET",
-      url: "bd.xml",
-      dataType: "xml",
-      success: function(xml){
-        $(xml).find('ta').each(function(){
-          var idta = $(this).find("id").text().toLowerCase();
-          if(idta == id){
-            var nome = $(this).find('nome').text();
-            var deficiencia = $(this).find('deficiencia').text();
-            var objetivo = $(this).find('objetivo').text();
-            var solucao = $(this).find('solucao').text();
-            var plataforma = $(this).find('plataforma').text();
-            var faixa = $(this).find('faixa').text();
-            var licenca = $(this).find('licenca').text();
-            var ano = $(this).find('ano').text();
-            adicionarTa(idta,nome,deficiencia,objetivo,solucao,plataforma,faixa,licenca,ano);
-          }
+
+function pegarTA(){
+
+  $.urlParam = function(name){
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    return results[1] || 0;
+  }
+
+  var id = $.urlParam('id');
+
+  $.ajax({
+    type: "GET",
+    url: "bd.xml",
+    dataType: "xml",
+    success: function(xml){
+      $(xml).find('ta').each(function(){
+        var idta = $(this).find("id").text().toLowerCase();
+        if(idta == id){
+          var nome = $(this).find('nome').text();
+          var deficiencia = $(this).find('deficiencia').text();
+          var objetivo = $(this).find('objetivo').text();
+          var solucao = $(this).find('solucao').text();
+          var plataforma = $(this).find('plataforma').text();
+          var faixa = $(this).find('faixa').text();
+          var licenca = $(this).find('licenca').text();
+          var ano = $(this).find('ano').text();
+          adicionarTa(idta,nome,deficiencia,objetivo,solucao,plataforma,faixa,licenca,ano);
+        }
       });
-      },
-      error: function() {
-        alert("Não Foi Possível Conectar Com o Banco de Dados");
-      }
-    });
-  }
+    },
+    error: function() {
+      alert("Não Foi Possível Conectar Com o Banco de Dados");
+    }
+  });
+}
 
-  function adicionarTa(id,nome,deficiencia,objetivo,solucao,plataforma,faixa,licenca,ano){
+function adicionarTa(id,nome,deficiencia,objetivo,solucao,plataforma,faixa,licenca,ano){
 
-    var s1 = '<div class="col-md-5 col-lg-4"> <div class="card card-shadowed text-center p-60"> <h4 class="text-success fw-400">'+nome;
-    var s2 = '</h4> <br> <p class="fs-15">'+objetivo;
-    var s3 = '</p><p>'+deficiencia;
-    var s4 = '</p><p>'+faixa;
-    var s5 = '</p><p>'+solucao;
-    var s6 = '</p><p>'+licenca; 
-    var s7 = '</p><br><br><a class="btn btn-bold btn-block btn-round btn-success" href="taDetalhe.html?id='+id;
-    var s8 = '">Abrir</a></div></div>';
+  var s1 = '<div class="card card-body article"><header class="text-center py-40"><h1>'+nome;
+  var s2 = '</h1><hr class="w-50px"></header><div class="container-article"><h4>Deficência</h4><p>'+deficiencia;
+  var s3 = '</p></div><div class="container-article"><h4>Objetivo</h4><p>'+objetivo;
+  var s4 = '</p></div><div class="container-article"><h4>Solução</h4><p>'+solucao;
+  var s5 = '</p></div><div class="container-article"><h4>Plataforma</h4><p>'+plataforma;
+  var s6 = '</p></div><div class="container-article"><h4>Faixa Etária</h4><p>'+faixa;
+  var s7 = '</p></div><div class="container-article"><h4>Licença</h4><p>'+licenca;
+  var s8 = '</p></div><div class="container-article"><h4>Ano de Desenvolvimento</h4><p>'+ano;
+  var s9 = '</p></div></div>';
 
-    var ta = s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8;
+  var ta = s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 +s9;
 
-    $("#contemResultados").append(ta);
-  }
- 
-  $(document).ready(pegarTA());
+  $("#contemResultados").append(ta);
+}
 
-  </script>
+$(document).ready(pegarTA());
+
+</script>
 
 </body>
 </html>
