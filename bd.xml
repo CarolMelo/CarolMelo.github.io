@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TAList>
+	
+	<ta>
+		<id>1</id>
+		<nome>Contátil</nome>
+		<ano>2018</ano>
+		<objetivo>Auxiliar no ensino da Matemática</objetivo>
+		<solucao>Software</solucao>
+		<plataforma>Desktop</plataforma>
+		<faixa>Sem restrições</faixa>
+		<licenca>Gratuito</licenca>
+		<deficiencia>Visual</deficiencia>
+	</ta>
+	<ta>
+		<id>2</id>
+		<nome>muito</nome>
+		<deficiencia>fisica</deficiencia>		
+		<objetivo>Auxiliar no ensino de portugues</objetivo>
+		<solucao>hardware</solucao>
+		<plataforma>livre</plataforma>
+		<faixa>15</faixa>
+		<licenca>pago</licenca>
+		<ano>1995</ano>
+	</ta>
+</TAList>
+

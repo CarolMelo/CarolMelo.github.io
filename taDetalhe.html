@@ -83,27 +83,23 @@
       <div class="card"> 
 
         <div class="card-body card-round">
-          
-
-          <div class="lookup lookup-huge no-icon" >
-            <input class="rounded" type="text" placeholder="Digite e depois aperte Enter." id="busca" name="busca">
-
+          <form class="lookup lookup-huge no-icon" id="busca" name="busca">
+              <input class="rounded" type="text" placeholder="Digite e depois aperte Enter.">
+                      
             <select class="d-none d-md-block" data-provide="selectpicker" id="tipo" name="tipo">
-              <option value="todos" selected>Todos</option>
-              <option value="nome">Nome</option>
-              <option value="deficiencia">Deficiência</option>
-              <option value="objetivo">Objetivo</option>
-              <option value="solucao">Solução</option>
-              <option value="plataforma">Plataforma</option>
-              <option value="faixa">Faixa Etária</option>
-              <option value="licenca">Licença</option>
-              <option value="ano">Ano</option>
+              <option selected>Todos</option>
+              <option>Nome</option>
+              <option>Deficiência</option>
+              <option>Objetivo</option>
+              <option>Solução</option>
+              <option>Plataforma</option>
+              <option>Faixa Etária</option>
+              <option>Licença</option>
+              <option>Ano</option>
             </select>
 
-            <button class="btn btn-primary btn-bold fs-14 rounded" onclick="buscar()">Buscar</button>
-          </div>  
-
-
+            <button class="btn btn-primary btn-bold fs-14 rounded">Buscar</button>
+          </form>  
 
         </div>
       </div>
@@ -112,9 +108,9 @@
 
       <div class="card"> 
 
-
-
-
+        
+          
+        
         <div class="card-body card-round row" id="contemResultados">
 
 
@@ -134,6 +130,58 @@
               <a class="btn btn-bold btn-block btn-round btn-success" href="#">Abrir</a>
             </div>
           </div>
+
+          <div class="col-md-5 col-lg-4">
+            <div class="card card-shadowed text-center p-60">
+              <h4 class="text-success fw-400">Contátil</h4>
+              <br>
+
+              <p class="fs-15">Auxiliar no ensino da Matemática</p>
+              <p>Visual</p>
+              <p>Sem restrições</p>
+              <p>Software</p>
+              <p>Gratuito</p>
+
+              <br>
+              <br>
+              <a class="btn btn-bold btn-block btn-round btn-success" href="#">Abrir</a>
+            </div>
+          </div>
+
+          <div class="col-md-5 col-lg-4">
+            <div class="card card-shadowed text-center p-60">
+              <h4 class="text-success fw-400">Contátil</h4>
+              <br>
+
+              <p class="fs-15">Auxiliar no ensino da Matemática</p>
+              <p>Visual</p>
+              <p>Sem restrições</p>
+              <p>Software</p>
+              <p>Gratuito</p>
+
+              <br>
+              <br>
+              <a class="btn btn-bold btn-block btn-round btn-success" href="#">Abrir</a>
+            </div>
+          </div>
+
+          <div class="col-md-5 col-lg-4">
+            <div class="card card-shadowed text-center p-60">
+              <h4 class="text-success fw-400">Contátil</h4>
+              <br>
+
+              <p class="fs-15">Auxiliar no ensino da Matemática</p>
+              <p>Visual</p>
+              <p>Sem restrições</p>
+              <p>Software</p>
+              <p>Gratuito</p>
+
+              <br>
+              <br>
+              <a class="btn btn-bold btn-block btn-round btn-success" href="#">Abrir</a>
+            </div>
+          </div>
+
 
         </div>
         
@@ -164,110 +212,6 @@
   <script src="assets/js/core.min.js"></script>
   <script src="assets/js/app.min.js"></script>
   <script src="assets/js/script.min.js"></script>
-
-
-  <script type="text/javascript" charset="utf-8" async defer>
-
-
-  function pegarTodos(){
-    $.ajax({
-      type: "GET",
-      url: "bd.xml",
-      dataType: "xml",
-      success: function(xml){
-        $(xml).find('ta').each(function(){
-          var id = $(this).find('id').text();
-          var nome = $(this).find('nome').text();
-          var deficiencia = $(this).find('deficiencia').text();
-          var objetivo = $(this).find('objetivo').text();
-          var solucao = $(this).find('solucao').text();
-          var plataforma = $(this).find('plataforma').text();
-          var faixa = $(this).find('faixa').text();
-          var licenca = $(this).find('licenca').text();
-          var ano = $(this).find('ano').text();
-
-
-        });
-      },
-      error: function() {
-        alert("An error occurred while processing XML file.");
-      }
-    });
-
-  }
-
-  function pegarPorAtributo(atributo){
-
-    var busca = document.getElementById('busca').value;
-    $.ajax({
-      type: "GET",
-      url: "bd.xml",
-      dataType: "xml",
-      success: function(xml){
-        $(xml).find('ta').each(function(){
-          var atrb = $(this).find(atributo).text();
-          if(atrb.includes(busca)){
-
-            alert("Achou");
-          }
-
-          var id = $(this).find('id').text();
-          var nome = $(this).find('nome').text();
-          var deficiencia = $(this).find('deficiencia').text();
-          var objetivo = $(this).find('objetivo').text();
-          var solucao = $(this).find('solucao').text();
-          var plataforma = $(this).find('plataforma').text();
-          var faixa = $(this).find('faixa').text();
-          var licenca = $(this).find('licenca').text();
-          var ano = $(this).find('ano').text();
-
-
-
-        });
-      },
-      error: function() {
-        alert("");
-      }
-    });
-    
-  }
-
-  $(document).ready(function(){
-  // $("#dvContent").append("<ul></ul>");
-  $.ajax({
-    type: "GET",
-    url: "bd.xml",
-    dataType: "xml",
-    success: function(xml){
-      $(xml).find('ta').each(function(){
-        var id = $(this).find('id').text();
-        var nome = $(this).find('nome').text();
-        var deficiencia = $(this).find('deficiencia').text();
-        var objetivo = $(this).find('objetivo').text();
-        var solucao = $(this).find('solucao').text();
-        var plataforma = $(this).find('plataforma').text();
-        var faixa = $(this).find('faixa').text();
-        var licenca = $(this).find('licenca').text();
-        var ano = $(this).find('ano').text();
-
-
-      
-      });
-    },
-    error: function() {
-      alert("An error occurred while processing XML file.");
-    }
-  });
-});
-
-
-function buscar(){
-  var selecionado = document.getElementById("tipo").value;
-  console.log(selecionado);
-
-}
-
-  </script>
 
 </body>
 </html>
