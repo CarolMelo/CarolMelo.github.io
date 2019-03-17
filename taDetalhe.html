@@ -83,23 +83,23 @@
       <div class="card"> 
 
         <div class="card-body card-round">
-          <form class="lookup lookup-huge no-icon" id="busca" name="busca">
-              <input class="rounded" type="text" placeholder="Digite e depois aperte Enter.">
-                      
+
+
+          <div class="lookup lookup-huge no-icon" >
+            <input class="rounded" type="text" placeholder="Digite e depois aperte Enter." id="busca" name="busca">
+
             <select class="d-none d-md-block" data-provide="selectpicker" id="tipo" name="tipo">
-              <option selected>Todos</option>
-              <option>Nome</option>
-              <option>Deficiência</option>
-              <option>Objetivo</option>
-              <option>Solução</option>
-              <option>Plataforma</option>
-              <option>Faixa Etária</option>
-              <option>Licença</option>
-              <option>Ano</option>
+              <option value="todos" selected>Todos</option>
+              <option value="nome">Nome</option>
+              <option value="deficiencia">Deficiência</option>
+              <option value="objetivo">Objetivo</option>
+              <option value="solucao">Solução</option>
+              <option value="faixa">Faixa Etária</option>
+              <option value="licenca">Licença</option>
             </select>
 
-            <button class="btn btn-primary btn-bold fs-14 rounded">Buscar</button>
-          </form>  
+            <button class="btn btn-primary btn-bold fs-14 rounded" onclick="buscar()">Buscar</button>
+          </div>  
 
         </div>
       </div>
@@ -108,86 +108,11 @@
 
       <div class="card"> 
 
-        
-          
-        
         <div class="card-body card-round row" id="contemResultados">
-
-
-          <div class="col-md-5 col-lg-4">
-            <div class="card card-shadowed text-center p-60">
-              <h4 class="text-success fw-400">Contátil</h4>
-              <br>
-
-              <p class="fs-15">Auxiliar no ensino da Matemática</p>
-              <p>Visual</p>
-              <p>Sem restrições</p>
-              <p>Software</p>
-              <p>Gratuito</p>
-
-              <br>
-              <br>
-              <a class="btn btn-bold btn-block btn-round btn-success" href="#">Abrir</a>
-            </div>
-          </div>
-
-          <div class="col-md-5 col-lg-4">
-            <div class="card card-shadowed text-center p-60">
-              <h4 class="text-success fw-400">Contátil</h4>
-              <br>
-
-              <p class="fs-15">Auxiliar no ensino da Matemática</p>
-              <p>Visual</p>
-              <p>Sem restrições</p>
-              <p>Software</p>
-              <p>Gratuito</p>
-
-              <br>
-              <br>
-              <a class="btn btn-bold btn-block btn-round btn-success" href="#">Abrir</a>
-            </div>
-          </div>
-
-          <div class="col-md-5 col-lg-4">
-            <div class="card card-shadowed text-center p-60">
-              <h4 class="text-success fw-400">Contátil</h4>
-              <br>
-
-              <p class="fs-15">Auxiliar no ensino da Matemática</p>
-              <p>Visual</p>
-              <p>Sem restrições</p>
-              <p>Software</p>
-              <p>Gratuito</p>
-
-              <br>
-              <br>
-              <a class="btn btn-bold btn-block btn-round btn-success" href="#">Abrir</a>
-            </div>
-          </div>
-
-          <div class="col-md-5 col-lg-4">
-            <div class="card card-shadowed text-center p-60">
-              <h4 class="text-success fw-400">Contátil</h4>
-              <br>
-
-              <p class="fs-15">Auxiliar no ensino da Matemática</p>
-              <p>Visual</p>
-              <p>Sem restrições</p>
-              <p>Software</p>
-              <p>Gratuito</p>
-
-              <br>
-              <br>
-              <a class="btn btn-bold btn-block btn-round btn-success" href="#">Abrir</a>
-            </div>
-          </div>
-
 
         </div>
         
-
       </div>
-
       <br><br><br>
 
 
@@ -212,6 +137,68 @@
   <script src="assets/js/core.min.js"></script>
   <script src="assets/js/app.min.js"></script>
   <script src="assets/js/script.min.js"></script>
+
+
+  <script type="text/javascript" charset="utf-8" async defer>
+    
+
+
+  function pegarTA(){
+    
+    $.urlParam = function(name){
+      var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+      return results[1] || 0;
+    }
+
+    var id = $.urlParam('id');
+
+    alert(id);
+
+    $.ajax({
+      type: "GET",
+      url: "bd.xml",
+      dataType: "xml",
+      success: function(xml){
+        $(xml).find('ta').each(function(){
+          var idta = $(this).find("id").text().toLowerCase();
+          if(idta == id){
+            var nome = $(this).find('nome').text();
+            alert(nome);
+            var deficiencia = $(this).find('deficiencia').text();
+            var objetivo = $(this).find('objetivo').text();
+            var solucao = $(this).find('solucao').text();
+            var plataforma = $(this).find('plataforma').text();
+            var faixa = $(this).find('faixa').text();
+            var licenca = $(this).find('licenca').text();
+            var ano = $(this).find('ano').text();
+            adicionarTa(idta,nome,deficiencia,objetivo,solucao,plataforma,faixa,licenca,ano);
+          }
+      });
+      },
+      error: function() {
+        alert("Não Foi Possível Conectar Com o Banco de Dados");
+      }
+    });
+  }
+
+  function adicionarTa(id,nome,deficiencia,objetivo,solucao,plataforma,faixa,licenca,ano){
+    var s1 = '<div class="col-md-5 col-lg-4"> <div class="card card-shadowed text-center p-60"> <h4 class="text-success fw-400">'+nome;
+    var s2 = '</h4> <br> <p class="fs-15">'+objetivo;
+    var s3 = '</p><p>'+deficiencia;
+    var s4 = '</p><p>'+faixa;
+    var s5 = '</p><p>'+solucao;
+    var s6 = '</p><p>'+licenca; 
+    var s7 = '</p><br><br><a class="btn btn-bold btn-block btn-round btn-success" href="taDetalhe.html?id='+id;
+    var s8 = '">Abrir</a></div></div>';
+
+    var ta = s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8;
+
+    $("#contemResultados").append(ta);
+  }
+ 
+  $(document).ready(pegarTA());
+
+  </script>
 
 </body>
 </html>
