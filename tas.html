@@ -158,7 +158,7 @@
       dataType: "xml",
       success: function(xml){
         $(xml).find('ta').each(function(){
-          var atrb = $(this).find(atributo).text();
+          var atrb = $(this).find(atributo).text().toLowerCase();
           if(atrb.includes(busca)){
             var id = $(this).find('id').text();
             var nome = $(this).find('nome').text();
@@ -171,11 +171,7 @@
             var ano = $(this).find('ano').text();
             adicionarTa(id,nome,objetivo,deficiencia,faixa,solucao,licenca);
           }
-          else{
-            addErro();
-          }
-
-        });
+      });
       },
       error: function() {
         alert("Não Foi Possível Conectar Com o Banco de Dados");
@@ -240,11 +236,11 @@
     var selecionado = document.getElementById("tipo").value;
     var busca = document.getElementById('busca').value;
     if (selecionado.includes('todos')) {
-      pegarTodos(busca);
+      pegarTodos(busca.toLowerCase());
     }
     else{
     limpar();  
-    pegarPorAtributo(selecionado,busca);
+    pegarPorAtributo(selecionado,busca.toLowerCase());
     }
   }
 
