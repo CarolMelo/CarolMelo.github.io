@@ -1,0 +1,180 @@
+
+<ta>
+	<id>0</id>
+	<nome>DINF</nome>
+	<ano>2018</ano>
+	<objetivo>Ensino de termos relacionados com a área de informática em LIBRAS</objetivo>
+	<solucao>Ambiente de Aprendizagem</solucao>
+	<plataforma>WEB</plataforma>
+	<faixa>Sem restrições</faixa>
+	<licenca>Gratuito</licenca>
+	<deficiencia>Auditiva</deficiencia>
+</ta>
+
+<ta>
+	<id>1</id>
+	<nome>ForcaBRAS</nome>
+	<ano>2018</ano>
+	<objetivo>Ensino lúdico e intuitivo da representação do alfabeto e de numerais usando LIBRAS.</objetivo>
+	<solucao>Jogo</solucao>
+	<plataforma>Desktop</plataforma>
+	<faixa>Sem restrições</faixa>
+	<licenca>Gratuito</licenca>
+	<deficiencia>Auditiva</deficiencia>
+</ta>
+
+<ta>
+	<id>2</id>
+	<nome>e-Sinais</nome>
+	<ano>2017</ano>
+	<objetivo>Auxiliar na compreensão textual</objetivo>
+	<solucao>Software</solucao>
+	<plataforma>Desktop</plataforma>
+	<faixa>Sem restrições</faixa>
+	<licenca>Gratuito</licenca>
+	<deficiencia>Auditiva</deficiencia>
+</ta>
+
+<ta>
+	<id>3</id>
+	<nome>MVLIBRAS</nome>
+	<ano>2015</ano>
+	<objetivo>Aprender a língua de sinais brasileira e a língua portuguesa, de modo interativo e inclusivo.</objetivo>
+	<solucao>Ambiente de Aprendizagem</solucao>
+	<plataforma>Desktop</plataforma>
+	<faixa>Sem restrições</faixa>
+	<licenca>Gratuito</licenca>
+	<deficiencia>Auditiva</deficiencia>
+</ta>
+
+<ta>
+	<id>4</id>
+	<nome>Contátil</nome>
+	<ano>2018</ano>
+	<objetivo>Auxiliar no ensino da Matemática</objetivo>
+	<solucao>Software</solucao>
+	<plataforma>Desktop</plataforma>
+	<faixa>Sem restrições</faixa>
+	<licenca>Gratuito</licenca>
+	<deficiencia>Visual</deficiencia>
+</ta>
+
+<ta>
+	<id>5</id>
+	<nome>Blinds, Basic Education</nome>
+	<ano>2017</ano>
+	<objetivo>Exercita vários componentes curriculares, o raciocínio lógico e até mesmo a percepção de espaço e memorização.</objetivo>
+	<solucao>Jogo</solucao>
+	<plataforma>Desktop</plataforma>
+	<faixa>Sem restrições</faixa>
+	<licenca>Gratuito</licenca>
+	<deficiencia>Visual</deficiencia>
+</ta>
+
+<ta>
+	<id>6</id>
+	<nome>Ortomonstro</nome>
+	<ano>2016</ano>
+	<objetivo>Voltado para práticas pedagógicas de ortografia usando o sistema Braille</objetivo>
+	<solucao>Jogo</solucao>
+	<plataforma>Smartphone e Tablet</plataforma>
+	<faixa>Sem restrições</faixa>
+	<licenca>Gratuito</licenca>
+	<deficiencia>Visual</deficiencia>
+</ta>
+
+<ta>
+	<id>7</id>
+	<nome> Geometrix</nome>
+	<ano>2013</ano>
+	<objetivo>Prover uma aprendizagem autônoma de conceitos de geometria</objetivo>
+	<solucao>Jogo</solucao>
+	<plataforma>Desktop</plataforma>
+	<faixa>Sem restrições</faixa>
+	<licenca>Gratuito</licenca>
+	<deficiencia>Visual</deficiencia>
+</ta>
+
+<ta>
+	<id>8</id>
+	<nome>Matraca</nome>
+	<ano>2011</ano>
+	<objetivo>Promover a inclusão digital</objetivo>
+	<solucao>Software</solucao>
+	<plataforma>Desktop</plataforma>
+	<faixa>Sem restrições</faixa>
+	<licenca>Gratuito</licenca>
+	<deficiencia>Visual</deficiencia>
+</ta>
+
+<ta>
+	<id>9</id>
+	<nome>GRID 2</nome>
+	<ano>2018</ano>
+	<objetivo>Poder expressar-se e comunicar-se de forma autônoma</objetivo>
+	<solucao>Software</solucao>
+	<plataforma>Desktop</plataforma>
+	<faixa>Sem restrições</faixa>
+	<licenca>Gratuito</licenca>
+	<deficiencia>Austismo</deficiencia>
+</ta>
+
+<ta>
+	<id>10</id>
+	<nome>Alfa autista</nome>
+	<ano>2018</ano>
+	<objetivo>Oferecer um método de ensino e aprendizagem</objetivo>
+	<solucao>Aplicativo</solucao>
+	<plataforma>Mobile</plataforma>
+	<faixa>Sem restrições</faixa>
+	<licenca>Gratuito</licenca>
+	<deficiencia>Autismo</deficiencia>
+</ta>
+
+<ta>
+	<id>11</id>
+	<nome>GCompris</nome>
+	<ano>2017</ano>
+	<objetivo>Auxiliar o Desenvolvimento da Leitura e Escrita</objetivo>
+	<solucao>Software</solucao>
+	<plataforma>Desktop</plataforma>
+	<faixa>Sem restrições</faixa>
+	<licenca>Gratuito</licenca>
+	<deficiencia>Intelectual</deficiencia>
+</ta>
+
+<ta>
+	<id>12</id>
+	<nome>SCALA</nome>
+	<ano>2009</ano>
+	<objetivo>Permitir que pessoas com defcência na fala possam produzir frases que expressem seus desejos, opiniões e sentimentos</objetivo>
+	<solucao>Software</solucao>
+	<plataforma>Desktop e Tablet</plataforma>
+	<faixa>Sem restrições</faixa>
+	<licenca>Gratuito</licenca>
+	<deficiencia>Autismo</deficiencia>
+</ta>
+
+<ta>
+	<id>13</id>
+	<nome>Storyboard</nome>
+	<ano>2018</ano>
+	<objetivo>Eliminar barreiras comunicacionais para alunos com necessidades de comunicação</objetivo>
+	<solucao>Software</solucao>
+	<plataforma>Desktop</plataforma>
+	<faixa>Sem restrições</faixa>
+	<licenca>Gratuito</licenca>
+	<deficiencia>Física e Paralisia Cerebral</deficiencia>
+</ta>
+
+<ta>
+	<id>14</id>
+	<nome>aBoard</nome>
+	<ano>2017</ano>
+	<objetivo>Permitir que pessoas com defcência na fala possam produzir frases que expressem seus desejos, opiniões e sentimentos</objetivo>
+	<solucao>Aplicativo</solucao>
+	<plataforma>Smartphone e Tablet</plataforma>
+	<faixa>Sem restrições</faixa>
+	<licenca>Gratuito</licenca>
+	<deficiencia>Física e Paralisia Cerebral</deficiencia>
+</ta>

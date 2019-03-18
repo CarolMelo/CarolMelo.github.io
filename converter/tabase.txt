@@ -1,0 +1,13 @@
+
+	
+	<ta>
+		<id></id>
+		<nome></nome>
+		<ano></ano>
+		<objetivo></objetivo>
+		<solucao></solucao>
+		<plataforma></plataforma>
+		<faixa></faixa>
+		<licenca></licenca>
+		<deficiencia></deficiencia>
+	</ta>
