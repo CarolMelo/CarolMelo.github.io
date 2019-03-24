@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="utf-8">
@@ -156,20 +156,18 @@ function pegarTA(){
 }
 
 function adicionarTa(id,nome,deficiencia,objetivo,solucao,plataforma,faixa,licenca,ano){
-
   var s1 = '<div class="card card-body article"><header class="text-center py-40"><h1>'+nome;
-  var s2 = '</h1><hr class="w-50px"></header><div class="container-article"><h4>Deficência</h4><p>'+deficiencia;
-  var s3 = '</p></div><div class="container-article"><h4>Objetivo</h4><p>'+objetivo;
-  var s4 = '</p></div><div class="container-article"><h4>Solução</h4><p>'+solucao;
-  var s5 = '</p></div><div class="container-article"><h4>Plataforma</h4><p>'+plataforma;
-  var s6 = '</p></div><div class="container-article"><h4>Faixa Etária</h4><p>'+faixa;
-  var s7 = '</p></div><div class="container-article"><h4>Licença</h4><p>'+licenca;
-  var s8 = '</p></div><div class="container-article"><h4>Ano de Desenvolvimento</h4><p>'+ano;
-  var s9 = '</p></div></div>';
-
+  var s2 = '</h1><hr class="w-50px"></header><div class="container-article"><h4>Deficência: '+deficiencia;
+  var s3 = '</h4></div><div class="container-article"><h4>Objetivo: '+objetivo;
+  var s4 = '</h4></div><div class="container-article"><h4>Solução: '+solucao;
+  var s5 = '</h4></div><div class="container-article"><h4>Plataforma: '+plataforma;
+  var s6 = '</h4></div><div class="container-article"><h4>Faixa Etária: '+faixa;
+  var s7 = '</h4></div><div class="container-article"><h4>Licença: '+licenca;
+  var s8 = '</h4></div><div class="container-article"><h4>Ano de Desenvolvimento: '+ano;
+  var s9 = '</h4></div></div>';
   var ta = s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 +s9;
-
   $("#contemResultados").append(ta);
+}
 }
 
 $(document).ready(pegarTA());
